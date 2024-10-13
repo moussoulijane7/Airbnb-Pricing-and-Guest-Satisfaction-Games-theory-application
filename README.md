@@ -110,18 +110,26 @@ pip install pandas numpy seaborn matplotlib scikit-learn xgboost scipy
 2. Place the provided CSV files in the appropriate folder.
 3. Run the main Python script to execute the analysis, generate visualizations, and see model outputs.
 
+
 ## Key Insights
 
-- Room type and location significantly influence Airbnb prices.
-- Superhosts generally offer a higher level of guest satisfaction compared to non-superhosts.
-- Prices tend to increase on weekends across cities, with some cities showing a larger price premium than others.
-- The Cournot competition model can effectively estimate optimal pricing based on neighborhood competition.
+ **Nash Equilibrium in Pricing**:
+   - Hosts must adjust their prices based on competitors to reach an equilibrium where no host benefits from changing their price, resulting in stabilized prices.
 
-## Future Work
+ **Impact of Service Quality (Superhost vs. Standard)**:
+   - *Superhosts* can charge higher prices while maintaining demand, emphasizing the importance of reputation and service quality in customer decisions.
 
-- Extend the pricing model to consider seasonal factors and events in cities.
-- Explore additional machine learning models to improve price predictions.
-- Incorporate more data sources to further enhance the analysis of guest satisfaction and pricing dynamics.
+ **Price Competition**:
+   - Setting a price too low attracts more customers but can reduce overall revenue. Conversely, high prices may deter customers if competitors offer similar options at lower costs.
+
+ **Customer Distribution by Price**:
+   - Customers distribute themselves among hosts based on price and quality. A lower price attracts more clients, but service quality can influence their choice significantly.
+
+ **Differentiation Strategies**:
+   - Hosts can differentiate by improving service quality (e.g., becoming a *Superhost*), allowing them to set higher prices without losing many customers, thus avoiding price wars.
+
+ **Price Convergence to Equilibrium**:
+   - Over time, prices converge to an equilibrium point where each host optimizes revenue, making it unprofitable to change their price or service quality.
 
 
 
