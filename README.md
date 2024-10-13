@@ -32,14 +32,52 @@ This project aims to analyze Airbnb data from various cities in Europe to better
 
 ## Theory Used
 
-### Cournot Competition
-The Cournot competition model is an economic theory that describes the behavior of firms in an oligopoly setting, where firms compete on the quantity of output produced. In this project, we adapt this model to represent the pricing competition between Airbnb hosts in the same neighborhood. Each host chooses a rental price, considering the prices of neighboring listings, and attempts to maximize profit. The Cournot model helps us estimate the "optimal" price where each host balances their own interests with the competitive pressure from others.
 
-### Game Theory & Nash Equilibrium
-In our game theory simulation, each Airbnb host is modeled as a player in a game where they choose both the price and quality of their listing. The objective is to maximize profit by balancing price, quality, and the level of competition in their market. The Nash Equilibrium is used to determine the point where no host can improve their profit by unilaterally changing their pricing or quality level, given the strategies of others.
+This project models the competition between hosts on a short-term rental platform like Airbnb, using game theory. The goal is to simulate various scenarios where hosts choose their prices and service quality to reach a Nash equilibrium.
 
-### Statistical Tests
-The Mann-Whitney U test, a non-parametric test, is used to compare guest satisfaction scores between two groups: superhosts and non-superhosts. This test helps determine whether the observed differences in guest satisfaction are statistically significant or if they could have occurred by chance.
+### Description of the Game Flow to Understand Game Theory
+
+Imagine you are the owner of a house or apartment that you want to rent out on a platform like Airbnb. You are not the only one: several other hosts in the same city are also trying to attract customers. Each of you must make several strategic decisions:
+
+1. **Set a Price**: Each host must choose the price at which they want to rent their property. You do not know in advance what price other hosts will set.
+
+2. **Offer Service Quality**: In addition to the price, each host offers a certain level of service quality. For example, if you are a *superhost*, it means you have positive reviews, and clients are willing to pay a little more to stay with you. The quality can be either high or standard.
+
+#### Steps of the Game
+
+1. **Hosts Choose Strategies**: Each host chooses a price and decides whether to offer high service quality (*superhost*) or standard quality.
+
+2. **Client Demand**: Clients look at the different prices and qualities offered by hosts. They will choose where to stay based on two main factors:
+   - Price: A lower price attracts more clients.
+   - Quality: Clients prefer to stay with *superhosts* or in higher-quality properties, even if it costs a little more.
+
+3. **Client Distribution**: Clients are distributed among the different hosts. If a host offers a better value for money, they will attract more clients.
+
+4. **Hosts’ Revenue Calculation**: Once each host has attracted a certain number of clients, their revenue is calculated. Revenue depends on the number of clients they have attracted, multiplied by the rental price, minus the cost of service quality.
+
+5. **Client Satisfaction**: Clients who paid a low price for good service quality will be more satisfied than those who paid a higher price for lower quality.
+
+#### Objective of the Game
+
+The goal for each host is to attract as many clients as possible while maximizing their revenue. To do this, each host must find a balance between:
+   - Setting a competitive price (not too high to avoid losing clients, but not too low to avoid losing money).
+   - Offering a sufficient level of service quality to attract clients (e.g., by becoming a *superhost*).
+
+#### The Concept of Equilibrium (Nash Equilibrium)
+
+At the end of the game, all hosts have adjusted their strategies (price and quality) in response to the choices of other hosts. An **equilibrium** is reached when no host has any incentive to change their strategy (price or quality), because they would earn less by making changes. This is called a **Nash Equilibrium**.
+
+#### Concrete Example in This Game
+
+- If a host sets a very low price, they will attract more clients but risk earning less money.
+- If another host offers high quality (like *superhost*), they can charge a higher price and attract clients looking for good quality, but it will also cost them more.
+- If two hosts offer similar services, they will need to adjust their prices to avoid losing clients. This is how competition drives prices to stabilize around a certain point.
+
+#### Conclusion
+
+This game shows how, in a competitive market like short-term rentals, hosts must make decisions based on what others are doing. They adjust their prices and service quality to maximize their revenue while trying to attract clients amid the competition.
+
+
 
 ## Project Structure
 
@@ -85,8 +123,7 @@ pip install pandas numpy seaborn matplotlib scikit-learn xgboost scipy
 - Explore additional machine learning models to improve price predictions.
 - Incorporate more data sources to further enhance the analysis of guest satisfaction and pricing dynamics.
 
-## License
-This project is licensed under the MIT License.
+
 
 ## Contact
 If you have any questions or suggestions, feel free to contact the project maintainer:
